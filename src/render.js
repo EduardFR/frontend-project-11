@@ -24,9 +24,6 @@ const handleProcessState = (elements, processState) => {
 
 const renderErrors = (elements, errors, prevError, state) => {
   const [fieldName, fieldElement] = Object.entries(elements.fields)[0];
-  console.log(fieldName);
-  console.log(fieldElement);
-  console.log(errors);
   const { feedbackElement } = elements;
   const error = errors[fieldName];
   const fieldHadError = has(prevError, fieldName);
@@ -120,7 +117,6 @@ export default (elements, initialState) => (path, value, prevValue) => {
       break;
 
     case 'form.errors':
-      console.log(initialState);
       renderErrors(elements, value, prevValue, initialState);
       break;
 
